@@ -1,0 +1,59 @@
+<!--
+// Pomidoro Mobile Application
+// RootControllerView.html
+//
+// created by @sauliuz
+// PopularOwl Labs // www.popularowl.com
+// Visit www.htmlcenter.com
+// for more mobile application templates
+-->
+<header class="bar-title">
+  <h1 class="title">Movie App</h1>
+</header>
+<nav class="bar-standard bar-header-secondary">
+  <form>
+    <input type="Search" placeholder="Search" ng-model="searchText">
+    
+  </form>
+</nav>
+<nav class="bar-tab">
+  <ul class="tab-inner">
+    <li class="tab-item active">
+      <a href="#/Root">
+        <img class="tab-icon" src="img/icon-home.png">
+        <div class="tab-label">Movies</div>
+      </a>
+    </li>
+    
+    <li class="tab-item">
+      <a href="#/appSetting">
+        <img class="tab-icon" src="img/icon-settings.png">
+        <div class="tab-label">Setting</div>
+      </a>
+    </li>
+    <li class="tab-item">
+      <a href="#/">
+        <img class="tab-icon" src="img/logout.png">
+        <div class="tab-label" ng-click="logout()">Logout</div>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="content">
+  <ul class="list">
+    <div>
+      <span>Welcome! {{data1}}</span>
+    </div>
+    <li class="list-divider">Recommended movies</li>
+    <li data-ng-repeat="movie in recommendedMovies | filter:searchText | orderBy:'title'" class="table-view-cell media">
+      <a class="navigate-right" href="#Show_movie/{{movie.id}}">
+        <img class="media-object pull-left" src="{{movie.posters.thumbnail}}" style="width:80px;float: left;padding-right: 18px;">
+        <div class="media-body" style="line-height:3;">
+          <h5> {{movie.title}}</h5>
+          <h5>Runtime : {{movie.runtime}}</h5>
+          <h5>Year : {{movie.year}}</h5>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

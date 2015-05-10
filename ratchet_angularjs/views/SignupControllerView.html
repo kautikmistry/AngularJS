@@ -1,0 +1,55 @@
+<!--
+// Pomidoro Mobile Application
+// SettingsControllerView.html
+//
+// created by @sauliuz
+// PopularOwl Labs // www.popularowl.com
+// Visit www.htmlcenter.com 
+// for more mobile application templates
+-->
+
+  <header class="bar-title">
+    <h1 class="title">Sign Up</h1>
+  </header>
+
+  <nav class="bar-tab">
+    <ul class="tab-inner">
+      <li class="tab-item">
+        <a href="#/">
+          <img class="tab-icon" src="img/icon-profile.png">
+          <div class="tab-label">Login</div>
+        </a>
+      </li>
+      <li class="tab-item">
+        <a href="#/signup">
+          <img class="tab-icon" src="img/icon-settings.png">
+          <div class="tab-label">Sign Up</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="form-wrapper">
+      <form method="post" id="form" name="myForm"  novalidate>
+      <input type="text" placeholder="Please Enter Full Name" name="fullname" id="fullname" ng-model="fullname" required>
+      <span class="error" ng-show="myForm.fullname.$dirty && myForm.fullname.$invalid">
+      <span class="error" ng-show="myForm.fullname.$error.required">Username is required.</span></span>
+
+      <input type="email" placeholder="Please Enter Email ID" name="email" id="email" ng-model="email" required>
+      <span class="error" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+      <span class="error" ng-show="myForm.email.$error.required">Email is required.</span>
+      <span ng-show="myForm.email.$error.email">Invalid email address.</span></span>
+
+      <input type="password" placeholder="Please Enter Password" name="password" id="password" ng-model="password" required> 
+      <span class="error" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+      <span class="error" ng-show="myForm.password.$error.required">password is required.</span></span>
+
+      <input type="password" placeholder="Please Re-Enter Password" name="re_password" id="re_password" compare-to="registration.user.password">
+
+      <button class="btn btn-positive btn-block"  ng-click="Login()" ng-disabled="myForm.user.$dirty && myForm.password.$invalid ||
+  myForm.email.$dirty && myForm.email.$invalid">Sign Up</button>
+    </form>
+    </div>
+	
+  </div>
