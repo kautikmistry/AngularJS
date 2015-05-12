@@ -1,0 +1,37 @@
+<!--
+// Pomidoro Mobile Application
+// RootControllerView.html
+//
+// created by @sauliuz
+// PopularOwl Labs // www.popularowl.com
+// Visit www.htmlcenter.com
+// for more mobile application templates
+-->
+<header class="bar-title">
+  <h1 class="title">Demo App</h1>
+</header>
+<nav class="bar-standard bar-header-secondary">
+  <form>
+    <input type="Search" placeholder="Search" ng-model="searchText">
+  </form>
+</nav>
+<nav class="bar-tab">
+  <ul class="tab-inner">
+    <li class="tab-item active">
+      <a href="#/Addcustomer">
+        <div class="tab-label">Add New Customer</div>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div class="content">
+  <ul class="list">
+    <li class="list-divider">All Customers</li>
+    <li data-ng-repeat="cust in customers | filter:searchText" class="table-view-cell media">
+        <div class="media-body" style="line-height:3;">
+          <h5>Name : {{cust.name}}</h5>
+          <h5>City : {{cust.city}}</h5>
+        </div>
+    </li>
+  </ul>
+</div>

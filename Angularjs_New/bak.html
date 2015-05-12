@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="">
+  <head>
+    <title>Using Angular js Directives and Data Binding </title>
+  </head>
+  <body ng-init="names=['Hello','Kautik','Surat','India']">
+    <div class="container" ng-controller="SimpleController">
+      <h3> Directive</h3>
+      Name : <input type="text" ng-model="name" /> {{ name }}
+      <h3>Looping with the ng-repeat Directive</h3>
+      <ul>
+        <li ng-repeat="name in names">{{ name }}</li>
+      </ul>
+
+      <h3>----------------------------------------------------------------------------</h3>
+
+      <h3>Using Filters</h3>
+      <input type="text" ng-model="nameText" />
+      <ul>
+        <li ng-repeat="cust in customers | filter:nameText">{{ name | uppercase}}</li>
+      </ul>
+    </div>
+    <script>
+        function SimpleController($scope)
+        {
+          $scope.customers = [
+              { name: 'mistry kautik', city: 'surat'},
+              { name: 'admin', city: 'mumbai'},
+              { name: 'mistry kautik', city: 'surat'},
+              { name: 'mistry kautik', city: 'surat'},
+          ];
+        }
+    </script>
+    <script src="js/angular.js"></script>
+  </body>
+</html>
