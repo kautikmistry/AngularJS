@@ -14,21 +14,31 @@ demoApp.config(function($routeProvider) {
 });
 
 
+demoApp.factory('SimpleFactory', function ($http) {
+    
+    var customers = 'customer.json';
+    var factory = {};
+    factory.getCustomer = function() {
+        return $http.get(customers);
+    };
+    factory.postCustomer = function(customer){
+    }
+    return factory;
+});
+
 // $scope injected dynamically
-demoApp.controller('RootController', function($scope) {
-    $scope.customers = [{
-        name: 'mistry',
-        city: 'surat'
-    }, {
-        name: 'admin',
-        city: 'mumbai'
-    }, {
-        name: 'kautik',
-        city: 'ahmedabad'
-    }, {
-        name: 'mistry kautik',
-        city: 'Jammu'
-    }, ];
+demoApp.controller('RootController', function($scope, SimpleFactory) {
+    $scope.customers = [];
+    init();
+    function init(){
+        $scope.customers = SimpleFactory.getCustomer()
+            .success(function (custs) {
+                $scope.customers = custs;
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load customer data: ' + error.message;
+            });
+    }
 
     //$scope with push data into array
     $scope.Addcustomer = function() {
