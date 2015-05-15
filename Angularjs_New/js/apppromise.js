@@ -34,3 +34,8 @@ demoApp.controller('RootController', function($scope, SimpleFactory) {
     });
    
 });
+
+demoApp.controller('validateCtrl', function($scope) {
+    $scope.name = 'Enter Your Name';
+    $scope.email = 'Example@gmail.com';
+});

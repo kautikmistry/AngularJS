@@ -43,8 +43,8 @@ demoApp.controller('RootController', function($scope, SimpleFactory) {
     //$scope with push data into array
     $scope.Addcustomer = function() {
         $scope.customers.push({
-            name: $scope.newcustomer.name,
-            city: $scope.newcustomer.city,
+            name: $scope.name,
+            city: $scope.city,
         });
     };
 });
