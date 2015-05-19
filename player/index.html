@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music playlist</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	
+</head>
+<body data-ng-app="myApp">
+<div class="container" ng-controller="maincntr">
+		 <h1>Playlist</h1>
+        <nav>
+          <button class="control play" ng-click="player.play()" ng-hide="player.playing">Play</button>
+          <button class="control pause" ng-click="player.pause()" ng-show="player.playing">Pause</button>
+          <button class="control prev" ng-click="player.previous()">Prev</button>
+          <button class="control next" ng-click="player.next()">Next</button>
+          <progress ng-click="timer(event)" value="0" max="1"></progress>
+        </nav>
+		<ul>
+
+			<li ng-repeat="track in player.playlist[0]" class="track"
+                  ng-class="{current: player.current.track == $index}"
+                  ng-click="player.play($index)">{{track.name}}</li>
+		</ul>
+
+
+	</div>
+</div>
+
+
+<script src="js/angular.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(function(){
+	$( 'a' ).click(function(){
+		$('.active').removeClass('active')
+		$(this).addClass( 'active' );
+	});
+});
+</script>
+</body>
+</html>

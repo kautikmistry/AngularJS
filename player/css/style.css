@@ -1,0 +1,27 @@
+body {
+    margin:10px;
+}
+li {
+    list-style-type: none;
+    line-height: 3;
+    margin: 11px;
+}
+a {
+    color: #948D8D;
+    text-decoration: none;
+    display: block;
+    width: 337px;
+}
+
+.current {
+    color: #2598A4;
+    border-top: 2px solid #7CC15E;
+    border-bottom: 2px solid #7CC15E;
+    font-weight: bolder;
+    
+}
+span{
+ 	 width: 130px; 
+ 	display: inline-block;
+}
+

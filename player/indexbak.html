@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music playlist</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body data-ng-app="myApp">
+<div class="container" ng-controller="maincntr">
+	<div class="row">
+		<h3>Songs</h3>
+		<ul>
+		  <h1>{{ test }}</h1>
+			<li ng-repeat="song in songs">
+				<a href=""  ng-click="playsong(song.url, song.id)">
+				<i class="fa fa-volume-up"></i>
+				<span style="width: 38px">{{ song.id }}</span>
+				<span>{{ song.name }}</span>
+				<span>{{ song.runtime }}</span></a>
+			</li>
+			<!-- <audio controls >
+				<source type="audio/mp3" ng-src="{{getAudioUrl()}}"/>
+			</audio> -->
+			<audio media-player="audio1" id="audio" controls></audio>
+		</ul>
+
+
+	</div>
+</div>
+
+
+<script src="js/angular.min.js"></script>
+<script src="js/angular-soundmanager2.js"></script>	
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(function(){
+	$( 'a' ).click(function(){
+		$('.active').removeClass('active')
+		$(this).addClass( 'active' );
+	});
+});
+</script>
+</body>
+</html>

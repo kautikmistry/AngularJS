@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+<head>
+	<title>Todo</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+	
+	<script src="js/angular.min.js"></script>
+	<script src="js/todo.js"></script>
+	<script src="js/ngStorage.min.js"></script>
+	<style>
+		.done{
+		    text-decoration: line-through;
+		    color: #ccc;
+		}
+	</style>
+</head>
+<body>
+
+	<div ng-controller="todocontroller">
+		<form name="todoform" ng-submit="addtodo()" enctype="application/x-www-form-urlencoded;charset=UTF-8">
+			<input type="text" name="newtodo" ng-model="newtodo" required>
+			<br/>
+			<br/>
+			<button ng-disabled="todoform.$invalid">Add New Todo</button>
+			<br/>
+		</form>
+		<br/>
+		<button ng-click="clearcompleted()">Clear Completed</button>
+		<ul>
+		<br/>
+		<li ng-repeat="todo in todos">
+			<input type="checkbox" ng-model="todo.done" />
+			<td>{{ $index + 1 }}</td>
+			<span ng-class="{ 'done' : todo.done}">{{ todo.title }}</span>
+		</li>
+	</ul>
+	</div>
+	
+
+</body>
+</html>

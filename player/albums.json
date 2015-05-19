@@ -1,0 +1,26 @@
+
+[{
+    "id" : "01",
+    "name" : "I love Music",
+    "runtime" : "1:00",
+    "url" : "media/01.mp3"
+
+}, {
+    "id" : "02",
+    "name" : "Patting The Beat",
+    "runtime" : "2:27",
+    "url" : "media/02.mp3"
+
+}, {
+    "id" : "03",
+    "name" : "My Old Dog",
+    "runtime" : "1:15",
+    "url" : "media/03.mp3"
+
+}, {
+    "id" : "04",
+    "name" : "ABC Medley",
+    "runtime" : "2:27",
+    "url" : "media/04.mp3"
+
+}]
